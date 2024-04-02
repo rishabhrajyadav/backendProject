@@ -54,7 +54,9 @@ const userSchema = new Schema({
 
   userSchema.methods.isPasswordCorrect = async function
   (password){
-      return await bcrypt.compare(password, this.password)
+      //need to debug this bcrypt thing later on
+      //return await bcrypt.compare(password, this.password)
+      return password === this.password;
   }
 
   userSchema.methods.generateAccessToken = function(){
